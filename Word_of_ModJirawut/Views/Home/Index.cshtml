@@ -1,8 +1,24 @@
-﻿@{
+﻿@model IEnumerable<Project>;
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>To >>> <a href="https://mee-automation.com/th/">Mee Automation Enginering Co.,Ltd</a>.</p>
+    <p>Facebook >>> <a href="https://www.facebook.com/Mee.AutomationTH?locale=hi_IN">Mee Automation Enginering Co.,Ltd</a>.</p>
 </div>
+<div class="about-content d-flex justify-content-center align-items-center">
+    <img src="~/images/Mee.jpg" alt="รูปภาพเกี่ยวกับเรา" class="about-image">
+</div>
+<style>
+    .about-content {
+        margin-top: 20px; /* เพิ่มระยะห่างด้านบนของหน้า */
+    }
+
+    .about-image {
+        max-width: 50%; /* รูปจะไม่เกินความกว้างของพื้นที่ที่แสดงรูป */
+        height: auto; /* ความสูงของรูปจะถูกปรับเป็นอัตราส่วน */
+        margin-bottom: 10px; /* ระยะห่างด้านล่างของรูป */
+    }
+</style>

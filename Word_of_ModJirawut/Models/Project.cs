@@ -6,7 +6,14 @@ namespace Word_of_ModJirawut.Models
     public class Project
     {
         [Key]
+        
+
         public int Id { get; set; }
+
+        [Required(ErrorMessage = "กรุณาป้อนรหัสโปรเจ็กต์ด้วย")]
+        [DisplayName("รหัสโปรเจ็กต์")]
+        public int IdProduct { get; set; }
+
         [Required(ErrorMessage = "กรุณาป้อนชื่อรายการด้วย")]
         [DisplayName("ชื่อรายการ")]
         public string Name { get; set; }
@@ -22,5 +29,8 @@ namespace Word_of_ModJirawut.Models
         [Required(ErrorMessage = "กรุณาป้อนหมายเหตุด้วย")]
         [DisplayName("หมายเหตุ")]
         public string Note { get; set; }
+
+
+       
     }
 }

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Project>;
+@{
+    ViewData["Title"] = "กราฟรายการ Project ตาม IdProduct";
+}
+
+<h1 class="text-center">กราฟรายการ Project ตาม IdProduct</h1>
+
+<div class="text-center">
+    <a class="btn btn-secondary my-2" asp-area="" asp-controller="Project" asp-action="Index">กลับสู่รายการ</a>
+</div>
+
+<canvas id="myChart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var products = @Html.Raw(Json.Serialize(ViewBag.Products));
+
+    var labels = [];
+    var data = [];
+
+    products.forEach(product => {
+        labels.push(`IdProduct ${product.IdProduct}`);
+        data.push(product.TotalPrice);
+    });
+
+    var myChart = new Chart(ctx, {
+        type: 'bar', // เลือกประเภทของกราฟ (bar, line, pie, etc.)
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'ราคาทั้งหมด',
+                data: data,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)', // สีพื้นหลังของแท่งกราฟ
+                borderColor: 'rgba(75, 192, 192, 1)', // สีของขอบแท่งกราฟ
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>

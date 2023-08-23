@@ -6,6 +6,13 @@
 <h1 class="text-center">แก้ไขข้อมูล</h1>
 
 <form method="post" asp-controller="Project" asp-action="Edit">
+    
+    <div class="form-group">
+        <label asp-for="IdProduct"></label>
+        <input type="number" asp-for="IdProduct" class="form-control" readonly="readonly" />
+        <!-- ไม่ต้องแสดง validation message ในกรณีที่ฟิลด์มีค่าผิดรูปแบบ -->
+    </div>
+
     <div class="form-group">
         <label asp-for="Name"></label>
         <input type="text" asp-for="Name" class="form-control" />
@@ -37,4 +44,40 @@
     </div>
 
     <button type="submit" class="btn btn-primary my-2">อัพเดท</button>
+    <button type="submit" class="btn btn-danger my-2" value="Go to Index">ยกเลิก</button>
+    
 </form>
+
+
+@section Scripts {
+    <script>
+        const priceUnitInput = document.getElementById('PriceUnit');
+        const qtyInput = document.getElementById('Qty');
+        const priceInput = document.getElementById('Price');
+
+        priceUnitInput.addEventListener('input', calculateTotalPrice);
+        qtyInput.addEventListener('input', calculateTotalPrice);
+
+        function calculateTotalPrice() {
+            const priceUnit = parseFloat(priceUnitInput.value) || 0;
+            const qty = parseFloat(qtyInput.value) || 0;
+
+            const totalPrice = priceUnit * qty;
+            priceInput.value = totalPrice.toFixed(0);
+        }
+
+        const noteInput = document.getElementById('Note');
+        const submitButton = document.querySelector('button[type="submit"]');
+
+        noteInput.addEventListener('input', () => {
+            // ตรวจสอบว่ามีข้อมูลในช่อง Note หรือไม่
+            if (noteInput.value.trim() === '') {
+                // ถ้าไม่มีข้อมูลในช่อง Note เปิดปุ่มบันทึก
+                submitButton.disabled = false;
+            } else {
+                // ถ้ามีข้อมูลในช่อง Note ปิดปุ่มบันทึก
+                submitButton.disabled = false;
+            }
+        });
+    </script>
+}
