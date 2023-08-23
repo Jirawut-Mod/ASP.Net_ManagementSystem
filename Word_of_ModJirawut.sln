@@ -3,11 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
-<<<<<<< HEAD
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Word_of_ModJirawut", "Word_of_ModJirawut\Word_of_ModJirawut.csproj", "{336F17B4-0F9E-433F-A358-7C382A9A4B46}"
-=======
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Word_of_ModJirawut", "Word_of_ModJirawut\Word_of_ModJirawut.csproj", "{336F17B4-0F9E-433F-A358-7C382A9A4B46}"
->>>>>>> c533b1ce84d15fd0f29edef58a8be2228b33f338
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
