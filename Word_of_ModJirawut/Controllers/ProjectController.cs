@@ -1,21 +1,28 @@
 ﻿using Word_of_ModJirawut.Models;
 using Microsoft.AspNetCore.Mvc;
 using Word_of_ModJirawut.Data;
+<<<<<<< HEAD
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+=======
+>>>>>>> c533b1ce84d15fd0f29edef58a8be2228b33f338
 
 namespace Word_of_ModJirawut.Controllers
 {
     public class ProjectController : Controller
     {
         private readonly ApplicationDBContext _db;
+<<<<<<< HEAD
         private object _dbContext;
 
+=======
+>>>>>>> c533b1ce84d15fd0f29edef58a8be2228b33f338
         public ProjectController(ApplicationDBContext db)
         {
             _db = db;
         }
+<<<<<<< HEAD
         public IActionResult Index(int? searchIdProduct)
         {
             IEnumerable<Project> projects = _db.Projects;
@@ -28,6 +35,12 @@ namespace Word_of_ModJirawut.Controllers
             ViewBag.SearchIdProduct = searchIdProduct;
 
             return View(projects.ToList());
+=======
+        public IActionResult Index()
+        {
+            IEnumerable <Project> allProject = _db.Projects;
+            return View(allProject);
+>>>>>>> c533b1ce84d15fd0f29edef58a8be2228b33f338
         }
 
         public IActionResult Create()
@@ -40,12 +53,15 @@ namespace Word_of_ModJirawut.Controllers
         {
             if (ModelState.IsValid)
             {
+<<<<<<< HEAD
                 // เช็คว่าช่อง Note มีค่าว่างหรือไม่
                 if (string.IsNullOrWhiteSpace(obj.Note))
                 {
                     obj.Note = null; // กำหนดให้เป็น null
                 }
 
+=======
+>>>>>>> c533b1ce84d15fd0f29edef58a8be2228b33f338
                 _db.Projects.Add(obj);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
@@ -96,6 +112,7 @@ namespace Word_of_ModJirawut.Controllers
             return RedirectToAction("Index");
         }
 
+<<<<<<< HEAD
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             // ...
@@ -124,5 +141,11 @@ namespace Word_of_ModJirawut.Controllers
 
 
 
+=======
+        public IActionResult About()
+        {
+            return View();
+        }
+>>>>>>> c533b1ce84d15fd0f29edef58a8be2228b33f338
     }
 }

@@ -5,6 +5,7 @@
 
 <h1 class="text-center">รายการ Project</h1>
 
+<<<<<<< HEAD
 <a class="btn btn-success my-2" asp-area="" asp-controller="Project" asp-action="Create">เพิ่มรายการ</a>
 <form asp-action="Index" method="get">
     <div class="form-group">
@@ -16,12 +17,16 @@
 </form>
 
 
+=======
+<button class="btn btn-primary my-2" asp-controller="Project" asp-action="Create">เพิ่มรายการ</button>
+>>>>>>> c533b1ce84d15fd0f29edef58a8be2228b33f338
 
 @if (Model.Count()>0)
 {
     <table class="table table-bordered table-hover">
         <thead style="background-color: black; color: white;">
             <tr>
+<<<<<<< HEAD
                 <th class="text-center">รหัสรายการ</th>
                 <th class="text-center">รหัสโปรเจ็กต์</th>
                 <th class="text-center">ชื่อรายการ</th>
@@ -65,6 +70,33 @@
                 </tr>
             </tbody>
         }
+=======
+                <th>รหัสรายการ</th>
+                <th>ชื่อรายการ</th>
+                <th>ราคาต่อหน่วย</th>
+                <th>จำนวน</th>
+                <th>ราคา</th>
+                <th>หมายเหตุ</th>
+                <th>แก้ไข</th>
+                <th>ลบ</th>
+            </tr>
+        </thead>
+        @foreach (var project in Model)
+        {
+            <tr>
+                <td>@project.Id</td>
+                <td>@project.Name</td>
+                <td>@project.PriceUnit</td>
+                <td>@project.Qty</td>
+                <td>@project.Price</td>
+                <td>@project.Note</td>
+                <td><a class="btn btn-warning" asp-controller="Project" asp-action="Edit" asp-route-id="@project.Id">แก้ไข</a></td>
+                <td><a class="btn btn-danger" asp-controller="Project" asp-action="Delete" asp-route-id="@project.Id" onclick="return confirm('คุณต้องการลบรายการ @project.Name หรือไม่ ?')">ลบ</a></td>
+            </tr>
+        }
+        <tbody>
+        </tbody>
+>>>>>>> c533b1ce84d15fd0f29edef58a8be2228b33f338
     </table>
 
 }

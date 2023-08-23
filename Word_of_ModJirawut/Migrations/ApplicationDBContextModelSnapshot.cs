@@ -29,9 +29,12 @@ namespace Word_of_ModJirawut.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+<<<<<<< HEAD
                     b.Property<int>("IdProduct")
                         .HasColumnType("int");
 
+=======
+>>>>>>> c533b1ce84d15fd0f29edef58a8be2228b33f338
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

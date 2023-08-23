@@ -1,5 +1,6 @@
 ﻿@model Project;
 @{
+<<<<<<< HEAD
     ViewData["Title"] = "รายการ";
 }
 
@@ -13,6 +14,15 @@
     </div>
 
     <div class="form-group">
+=======
+    ViewData["Title"] = "รายการจัดซื้อ";
+}
+
+<h1 class="text-center">รายการจัดซื้อ</h1>
+
+<form method="post" asp-controller="Project" asp-action="Create">
+    <div class="form-group">
+>>>>>>> c533b1ce84d15fd0f29edef58a8be2228b33f338
         <label asp-for="Name"></label>
         <input type="text" asp-for="Name" class="form-control" />
         <span asp-validation-for="Name" class="text-danger"></span>
@@ -43,6 +53,7 @@
     </div>
 
     <button type="submit" class="btn btn-primary my-2">บันทึก</button>
+<<<<<<< HEAD
     <a class="btn btn-danger my-2" asp-area="" asp-controller="Project" asp-action="Index">ยกเลิก</a>
 
 
@@ -80,3 +91,6 @@
         });
     </script>
 }
+=======
+</form>
+>>>>>>> c533b1ce84d15fd0f29edef58a8be2228b33f338

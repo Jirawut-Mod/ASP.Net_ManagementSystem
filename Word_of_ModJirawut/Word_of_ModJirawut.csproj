@@ -7,10 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <None Include="wwwroot\images\Mee.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+=======
+>>>>>>> c533b1ce84d15fd0f29edef58a8be2228b33f338
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.10">
